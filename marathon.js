@@ -1,14 +1,21 @@
 function solution(participant, completion) {
+
+    // 4.
+    var answer = participant.find(
+        participant => !completion[participant]--,
+        completion.map(participant => completion[participant] = (completion[participant] | 0) + 1)
+    )
+    return answer;
     // 3.
-    participant.sort()
-    completion.sort()
+    // participant.sort()
+    // completion.sort()
 
-    for (const i in completion) {
-        if (participant[i] != completion[i])
-            return participant[i];
-    }
+    // for (const i in completion) {
+    //     if (participant[i] != completion[i])
+    //         return participant[i];
+    // }
 
-    return participant[participant.length - 1]
+    // return participant[participant.length - 1]
 
     // 2.
     // var answer = "";
@@ -30,3 +37,4 @@ var participantArr = ["mislav", "stanko", "mislav", "ana"];
 var completionArr = ["stanko", "ana", "mislav"];
 
 console.log(solution(participantArr, completionArr));
+// var solution = (_, $) => _.find(_ => !$[_]--, $.map(_ => $[_] = ($[_] | 0) + 1))
