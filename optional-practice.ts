@@ -9,3 +9,12 @@ function printName(obj: Name) {
 
 printName({ first: "Daniel" });
 printName({ first: "Nick", last: "Kim" });
+
+
+function fxType(x: number): number {
+    return x * 2;
+}
+
+type TupleType = [string, boolean];
+
+let user: TupleType = ['john', true]
