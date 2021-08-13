@@ -19,20 +19,29 @@
 //     return answer;
 // }
 
+// function solution(numbers) {
+
+//     if (numbers.length === 0) {
+//         return 0;
+//     }
+
+//     var answer = numbers;
+//     answer = answer.sort((a, b) => '' + a + b > '' + b + a ? -1 : 1);
+//     const reducer = answer.reduce((pre, cur) => pre + cur);
+
+//     if (reducer === 0) return '0';
+//     answer = answer.join('');
+//     return answer.toString();
+
+// }
+
 function solution(numbers) {
+    var answer = numbers.map(v => v + '')
+        .sort((a, b) => (b + a) * 1 - (a + b) * 1)
+        .join('');
 
-    if (numbers.length === 0) {
-        return 0;
-    }
-
-    var answer = numbers;
-    answer = answer.sort((a, b) => '' + a + b > '' + b + a ? -1 : 1);
-    const reducer = answer.reduce((pre, cur) => pre + cur);
-
-    if (reducer === 0) return '0';
-    answer = answer.join('');
-    return answer.toString();
-
+    return answer[0] === '0' ? '0' : answer;
 }
+
 solution([6, 10, 2])
 solution([0, 0, 0, 0, 0])
