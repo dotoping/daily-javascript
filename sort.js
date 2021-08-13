@@ -2,10 +2,10 @@ function solution(array, commands) {
     var answer = [];
     var start;
     var end;
-    for (i = 0; i < commands.length; i++) {
+    for (var i = 0; i < commands.length; i++) {
         start = commands[i][0] - 1;
         end = commands[i][1];
-        returnValue = commands[i][2] - 1;
+        var returnValue = commands[i][2] - 1;
         answer.push(array.slice(start, end).sort()[returnValue])
     }
     return answer;
