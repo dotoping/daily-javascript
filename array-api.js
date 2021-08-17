@@ -69,20 +69,20 @@ console.clear();
     const result2 = students.every((student) => student.score <= 50)
     console.log(result2)
 }
-console.clear();
+// console.clear();
 // Q9. compute students' average score
 {
     const result = students.reduce((prev, curr) => prev + curr.score, 0) / students.length;
     console.log(result);
 }
-console.clear();
+// console.clear();
 // Q10. make a string containing all the scores
 // result should be: '45, 80, 90, 66, 88'
 {
     const result = students.map((student) => student.score).join();
     console.log(result);
 }
-console.clear();
+// console.clear();
 // Bonus! do Q10 sorted in ascending order
 // result should be: '45, 66, 80, 88, 90'
 {
