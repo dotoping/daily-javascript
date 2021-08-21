@@ -26,3 +26,6 @@ sendGreeting('Hello', 'John');
 const sendGreetingArrow = (message = 'Hello', userName = 'Daniel'): void => console.log(
     `${message}, ${userName}`
 );
+
+
+
