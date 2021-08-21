@@ -6,25 +6,32 @@ let email: string = 'daniel.dotping@gmail.com';
 let majob: string = "CS";
 let isAvailable: boolean = true;
 
-let student1 = {
+enum GenderType {
+    Male = 'male',
+    Female = 'female',
+    genderNeutral = 'genderNeutral'
+};
+
+interface Student {
+    studentID: number,
+    studentName: string,
+    age?: number,
+    gender: 'male' | 'female' | 'genderNeutral',
+    major: string,
+    email: string,
+    isAvailable: boolean,
+};
+
+let student1: Student = {
     studentID: 4567890,
     studentName: 'Sunny',
     age: 30,
     major: "CS",
-    gender: "female",
+    gender: 'female',
     email: 'sunny.dotping@gmail.com',
     isAvailable: true
 }
 
-interface Student {
-    studentID: number;
-    studentName: string;
-    age: number;
-    gender?: string;
-    major: string;
-    email: string;
-    isAvailable: boolean;
-}
 
 function getStudent(studentID: number): Student {
     return {
@@ -32,7 +39,7 @@ function getStudent(studentID: number): Student {
         studentName: 'Daniel',
         age: 30,
         major: "PS",
-        gender: "male",
+        gender: 'male',
         email: 'daniel.dotping@gmail.com',
         isAvailable: true
     };
