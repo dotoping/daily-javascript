@@ -1,13 +1,22 @@
-process.stdin.setEncoding('utf8');
-let a, b = 0;
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin
+});
+const arr = [];
+rl.on('line', (l) => {
+    var ab = l.split(' ');
+    var a = parseInt(ab[0]);
+    var b = parseInt(ab[1]);
 
-process.stdin.on('readable', () => {
-    a = process.stdin.read();
-    b = process.stdin.read();
+    arr.push(a + b);
+    arr.push(a - b);
+    arr.push(a * b);
+    arr.push(parseInt(a / b));
+    arr.push(a % b);
 
-    a !== null || a > 0 ? a : 0;
-    b !== null || b < 10 ? b : 0;
+    for (var i = 0; i < arr.length; i++) console.log(arr[i]);
 
-    console.log(a, b);
+    rl.close();
+}).on('close', () => {
     process.exit();
-})
+});
