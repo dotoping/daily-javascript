@@ -1,0 +1,16 @@
+function permutation(arr, selectNum) {
+    const result = [];
+    if (selectNum === 1) return arr.map((v) => [v]);
+
+    arr.forEach((v, idx, arr) => {
+        const fixed = v;
+        const restArr = arr;
+        const permutationArr = permutation(restArr, selectNum - 1);
+        const combineFix = permutationArr.map((v) => [fixed, ...v]);
+        result.push(...combineFix);
+    });
+    return result;
+}
+
+
+console.log(permutation([1, 2, 3, 4], 2));
