@@ -17,13 +17,12 @@ After sorting, it becomes [0,1,9,16,100].
  */
 var sortedSquares = function (nums) {
     
-    var result = [];
-    nums.map((num) => {
+    var result = nums.map((num) => {
         if (num < 0) {
             num *= -1;
         } 
         num *= num;
-        result.push(num)
+        return num;
     });
 
     return result.sort((a, b) => a - b);
