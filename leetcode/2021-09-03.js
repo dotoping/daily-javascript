@@ -10,10 +10,9 @@ var checkIfExist = function (arr) {
     // 배열안에 숫자 중 하나를 받아서 그 값에 *2한 값 리턴 function
     // 리턴 된 값을 배열에서 값은 값이 있으면 true, 아니면 다음 수를 function에서 다시 확인
 
-    console.log(arr.filter(num => num === 0).length >= 2)
-    // if (arr.filter(num => num === 0).length >=2) {
-    //     return true;
-    // }
+    if (arr.filter(num => num === 0).length >=2) {
+        return console.log(true);
+    }
     arr.sort((a, b) => a - b);
     for (var i = 0; i < arr.length; i++){
         
