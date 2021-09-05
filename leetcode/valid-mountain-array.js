@@ -18,32 +18,33 @@ var validMountainArray = function (arr) {
 
     if (arrLength >= 3) {
         var i_d = "+";
-        for (var i = 0; i < arrLength; i++){
-            if (arr[0] < arr[1] || arr[arrLength - 2] > arr[arrLength - 1]) {
+        if (arr[0] < arr[1] && arr[arrLength - 2] > arr[arrLength - 1]) {
+            for (var i = 0; i < arrLength; i++) {
+                if (arr[i] === arr[i + 1]) {
+                    return false;
+                }
                 if (arr[i] < arr[i + 1]) {
-                    //시작부터 증가부분
                     if (i_d === "-") {
-                        return false + "다시 증가";
+                        return false;
                     }
 
                     i_d = "+";
                 } else {
+                    
                     if (i + 1 === arrLength - 1) {
                         return true;
-                    }
-                    else if (arr[i] > arr[i + 1]){
-                        //고점에서 작아지는 부분
+                    } else if (arr[i] > arr[i + 1]) {
                         i_d = "-";
                     } else {
-                        return false + "?";
+                        return false;
                     }
                 }
-            } else {
-                return false + "sec";
             }
+        } else {
+            return false;
         }
     }
-    return false + "first";
+    return false;
 };
 
-console.log(validMountainArray([0,2,3,3,5,2,1,0]));
+console.log(validMountainArray([1, 8, 7, 6, 5, 5, 3, 2, 1, 0]));
