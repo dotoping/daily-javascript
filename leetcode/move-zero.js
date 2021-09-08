@@ -22,17 +22,48 @@ Output: [0]
 */
 var moveZeroes = function (nums) {
        
-    nums.sort((a, b) => a - b);
-    for (var i = 0; i < nums.length; i++){
-        if (nums[0] === 0) {
-            nums.splice(nums.length , 0, 0);
-            nums.shift();
+    // nums.sort((a, b) => a - b);
+    // for (var i = 0; i < nums.length; i++){
+    //     if (nums[0] === 0) {
+    //         nums.splice(nums.length , 0, 0);
+    //         nums.shift();
+    //     } else {
+    //         break;
+    //     }
+    // }
+    // return nums;
+    // var arr = new Array(nums.length);
+    
+    // var i = 0;
+    // while (i < nums.length) {
+    //     if (nums[i] === 0) {
+    //         nums.splice(i, 1);
+    //     } else {
+    //         ++i;
+    //     }
+    //     arr[i] = nums[i];
+    // }
+    
+    // arr.fill(0, i);
+    // nums = [...arr];
+    // console.log(nums)
+    var i = 0;
+    var length = nums.length;
+    while (i < nums.length) {
+        if (nums[i] === 0) {
+            nums.splice(i, 1);
         } else {
-            break;
+            ++i;
         }
     }
-    return nums;
+    
+    for (var j = 0; j < length - i; j++){
+        nums.splice(length - j, 0, 0);
+    }
+
+    
+
 };
 
 console.log(moveZeroes([0, 1, 0, 3, 12]));
-console.log(moveZeroes([0]));
+// console.log(moveZeroes([0]));
