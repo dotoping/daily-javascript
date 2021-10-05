@@ -12,9 +12,9 @@
 function solution(left, right) {
     var answer = 0;
 
-    for (left; left <= right; left++){
+    for (left; left <= right; left++) {
         var count = 0;
-        for (let i = 1; i <= left; i++){
+        for (let i = 1; i <= left; i++) {
             if (left % i === 0) count++;
         }
         answer = count % 2 === 0 ? answer + left : answer - left;
@@ -22,7 +22,7 @@ function solution(left, right) {
     return answer;
 }
 
-
+//square root 값의 제곱근이 정수면, 개수는 홀수, 정수가 아니면 짝수
 function solution(left, right) {
     var answer = 0;
     for (let i = left; i <= right; i++) {
