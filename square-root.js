@@ -23,7 +23,7 @@ function solution(left, right) {
 }
 
 //square root 값의 제곱근이 정수면, 개수는 홀수, 정수가 아니면 짝수
-function solution(left, right) {
+function solution2(left, right) {
     var answer = 0;
     for (let i = left; i <= right; i++) {
         if (Number.isInteger(Math.sqrt(i))) {
