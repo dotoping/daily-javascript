@@ -9,5 +9,5 @@ function checkPalindrome(inputString) {
 }
 
 
-console.log(checkPalindrome("Hello"));
+console.log(Number.NEGATIVE_INFINITY);
 console.log(checkPalindrome("decaf faced"));
