@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "bracket-matcher.js",
-  "dependencies": {},
+  "dependencies": {
+    "jest": "^27.3.0",
+    "mocha": "^9.1.3"
+  },
   "devDependencies": {
     "typescript": "^4.3.5"
   },
