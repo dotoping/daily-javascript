@@ -1,10 +1,12 @@
-// const originalPrice = (prices, notes) => {
-//    return notes.map((note, index) => {
-//       return note.indexOf('lower') > 0 ? prices[index] / (1 - (note.slice(0, note.indexOf('.')) * 0.01))
-//          : note.indexOf('higher') > 0 ? prices[index] / (1 + (note.slice(0, note.indexOf('.')) * 0.01))
-//             : prices[index];
-//    })   
-// }
+// calculate original price
+const originalPrice = (prices, notes) => {
+   return notes.map((note, index) => {
+      return note.indexOf('lower') > 0 ? prices[index] / (1 - (note.slice(0, note.indexOf('.')) * 0.01))
+         : note.indexOf('higher') > 0 ? prices[index] / (1 + (note.slice(0, note.indexOf('.')) * 0.01))
+            : prices[index];
+   })   
+}
+
 function roundToTwo(num) {
    return +(Math.round(num + "e+2") + "e-2");
 }
