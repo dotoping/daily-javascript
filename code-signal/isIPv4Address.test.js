@@ -23,6 +23,9 @@ describe('isIPv4Address', () => {
     ],
     [
         "0.0.0.0", true
+    ],
+    [
+        "255.255.255.255.255", true
     ]
 ];
     testCases.forEach(el => testConditions(...el))
